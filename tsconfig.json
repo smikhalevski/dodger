@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "importHelpers": true,
+    "moduleResolution": "Node",
+    "strict": true,
+    "target": "ES5",
+    "module": "ES6",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "lib": [
+      "ES6"
+    ],
+    "paths": {
+      "@tenuous/*": [
+        "./packages/*/src/main"
+      ],
+      "tenuous/lib/*": [
+        "./packages/tenuous/src/main/*"
+      ]
+    }
+  },
+  "include": [
+    "./*",
+    "./packages/*/src/main/**/*"
+  ]
+}
