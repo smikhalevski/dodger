@@ -1,4 +1,2 @@
-index.js
-index.d.ts
-Theme.js
-Theme.d.ts
+*.js
+*.d.ts

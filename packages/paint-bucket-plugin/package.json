@@ -1,7 +1,7 @@
 {
-  "name": "@tenuous/foo",
+  "name": "@tenuous/paint-bucket-plugin",
   "version": "1.0.0",
-  "description": "",
+  "description": "Paint Bucket color manipulation plugin for Tenuous.",
   "main": "./lib/index-cjs.js",
   "module": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json && npm run rollup && npm run terser",
-    "rollup": "rollup --no-treeshake --external @tenuous/core,@tenuous/plugin-utils --input ./lib/index.js --file ./lib/index-cjs.js --format cjs --plugin @rollup/plugin-node-resolve",
+    "rollup": "rollup --no-treeshake --external @paint-bucket/core,tenuous --input ./lib/index.js --file ./lib/index-cjs.js --format cjs --plugin @rollup/plugin-node-resolve",
     "terser": "for file in $(find ./lib -name '*.js'); do terser --compress --mangle --output $file -- $file; done || exit 1",
     "clean": "rimraf ./lib",
     "test": "jest --detectOpenHandles"
@@ -40,5 +40,9 @@
         }
       }
     }
+  },
+  "peerDependencies": {
+    "@paint-bucket/core": "^1.0.0",
+    "tenuous": "^1.0.0"
   }
 }

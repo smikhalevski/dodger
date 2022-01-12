@@ -14,13 +14,15 @@
       "@tenuous/*": [
         "./packages/*/src/main"
       ],
-      "tenuous/lib/*": [
+      "tenuous": [
+        "./packages/tenuous/src/main"
+      ],
+      "tenuous/*": [
         "./packages/tenuous/src/main/*"
       ]
     }
   },
   "include": [
-    "./*",
     "./packages/*/src/main/**/*"
   ]
 }

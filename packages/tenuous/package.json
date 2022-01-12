@@ -1,18 +1,21 @@
 {
   "name": "tenuous",
   "version": "1.0.0",
-  "description": "",
-  "main": "./lib/index-cjs.js",
-  "module": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "description": "Application theming through the prism of inversion of control.",
+  "main": "./index-cjs.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "sideEffects": false,
   "files": [
-    "lib"
+    "*.js",
+    "*.d.ts"
   ],
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json && npm run rollup && npm run terser",
-    "rollup": "rollup --no-treeshake --external @tenuous/core,@tenuous/plugin-utils --input ./lib/index.js --file ./lib/index-cjs.js --format cjs --plugin @rollup/plugin-node-resolve",
+    "postbuild": "cp ./lib/* .",
+    "rollup": "rollup --input ./lib/index.js --file ./lib/index-cjs.js --format cjs --plugin @rollup/plugin-node-resolve",
     "terser": "for file in $(find ./lib -name '*.js'); do terser --compress --mangle --output $file -- $file; done || exit 1",
-    "clean": "rimraf ./lib",
+    "clean": "rimraf ./lib '*.js' '*.d.ts'",
     "test": "jest --detectOpenHandles"
   },
   "repository": {

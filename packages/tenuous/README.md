@@ -1,1 +1,1 @@
-# @tenuous/theme
+# tenuous
