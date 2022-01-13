@@ -128,14 +128,14 @@ export function useTheme(): Theme {
 import {FC, useContext} from 'react';
 import {useTheme} from 'ui-theme';
 import {Theme} from 'tenuous';
-import {ColoLike} from 'paint-bucket';
+import {ColorLike} from 'paint-bucket';
 
 declare module 'tenuous/Theme' {
 
   namespace Theme {
 
     interface Colors {
-      buttonColor: ColoLike;
+      buttonColor: ColorLike;
     }
   }
 }
@@ -157,14 +157,14 @@ export const Button: FC = (props) => {
 import {FC, useContext} from 'react';
 import {useTheme} from 'ui-theme';
 import {Theme} from 'tenuous';
-import {ColoLike} from 'paint-bucket';
+import {ColorLike} from 'paint-bucket';
 
 declare module 'tenuous/Theme' {
 
   namespace Theme {
 
     interface Colors {
-      inputColor: ColoLike;
+      inputColor: ColorLike;
     }
   }
 }
