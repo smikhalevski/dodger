@@ -94,6 +94,9 @@ Let's review possible fixes:
 2. Give up theme typing and use it as a bag of properties. Using theme, refactoring components and maintenance won't
    come easy in this case. Who really wants to give up type checking anyway?
 
+3. Make theme very abstract with as few typed component-specific parameters as possible. This can be a great solution
+   and [Material UI](https://github.com/smikhalevski/tenuous) can be a good example of this approach.
+
 # Solution
 
 Tenuous is more of a concept than a library. It uses
